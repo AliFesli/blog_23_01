@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from django.utils import timezone
 
 # Create your models here.
@@ -24,4 +25,4 @@ class Block(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("Block_detail", kwargs={"pk": self.pk})
+        return reverse_lazy("Block_detail", kwargs={"pk": self.pk})
